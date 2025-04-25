@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 240 20% 3%;
+    --background: 220 20% 5%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 220 25% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 220 25% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 263 70% 50%;
+    --primary: 210 70% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 100% 65%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 30 80% 60%;
+    --secondary-foreground: 40 20% 10%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 220 25% 20%;
+    --muted-foreground: 220 10% 70%;
 
-    --accent: 12 80% 43%;
+    --accent: 300 70% 40%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 220 25% 40%;
 
     --radius: 0.5rem;
   }
@@ -43,77 +43,140 @@
 
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(circle at 50% 50%, rgba(123, 97, 255, 0.1), rgba(15, 23, 42, 0));
+    background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1950');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
   }
 }
 
-.game-card {
-  transition: all 0.3s ease;
+.wow-container {
   position: relative;
-  overflow: hidden;
-  cursor: pointer;
 }
 
-.game-card::before {
+.wow-container::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent 70%, rgba(123, 97, 255, 0.7) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(65, 105, 225, 0.2), rgba(10, 15, 30, 0.8));
+  pointer-events: none;
+  z-index: -1;
 }
 
-.game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(123, 97, 255, 0.4);
-}
-
-.game-card:hover::before {
-  opacity: 1;
-}
-
-.news-card {
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.news-card:hover {
-  transform: scale(1.03);
-}
-
-.play-btn {
+.wow-button {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  background: linear-gradient(45deg, #192841, #0d1423);
+  border: 1px solid #304878;
 }
 
-.play-btn::before {
+.wow-button:hover {
+  border-color: #4a6bb5;
+  box-shadow: 0 0 10px rgba(74, 107, 181, 0.6);
+}
+
+.wow-button::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: all 0.5s ease;
 }
 
-.play-btn:hover::before {
+.wow-button:hover::before {
   left: 100%;
 }
 
-.neon-text {
-  text-shadow: 0 0 5px rgba(123, 97, 255, 0.8), 0 0 10px rgba(123, 97, 255, 0.5);
+.wow-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(30, 50, 100, 0.6), rgba(10, 20, 40, 0.9));
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(74, 107, 181, 0.3);
 }
 
-.purple-glow {
-  box-shadow: 0 0 15px rgba(123, 97, 255, 0.7);
+.wow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(74, 107, 181, 0.4);
+  border-color: rgba(74, 107, 181, 0.6);
 }
 
-.accent-glow {
-  box-shadow: 0 0 15px rgba(239, 68, 68, 0.7);
+.news-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(74, 107, 181, 0.3);
+  background: rgba(20, 30, 60, 0.7);
+  backdrop-filter: blur(4px);
 }
+
+.news-card:hover {
+  transform: scale(1.02);
+  border-color: rgba(74, 107, 181, 0.6);
+  box-shadow: 0 0 15px rgba(74, 107, 181, 0.3);
+}
+
+.luntares-glow {
+  text-shadow: 0 0 5px rgba(74, 107, 181, 0.8), 0 0 15px rgba(74, 107, 181, 0.5);
+}
+
+.class-card {
+  transition: all 0.3s ease;
+  background: linear-gradient(160deg, rgba(30, 50, 100, 0.4), rgba(10, 20, 40, 0.7));
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(74, 107, 181, 0.3);
+}
+
+.class-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(74, 107, 181, 0.3);
+  border-color: rgba(74, 107, 181, 0.6);
+}
+
+.warrior { border-color: rgba(199, 156, 110, 0.6); }
+.warrior:hover { box-shadow: 0 0 10px rgba(199, 156, 110, 0.6); }
+
+.paladin { border-color: rgba(245, 140, 186, 0.6); }
+.paladin:hover { box-shadow: 0 0 10px rgba(245, 140, 186, 0.6); }
+
+.hunter { border-color: rgba(171, 212, 115, 0.6); }
+.hunter:hover { box-shadow: 0 0 10px rgba(171, 212, 115, 0.6); }
+
+.rogue { border-color: rgba(255, 245, 105, 0.6); }
+.rogue:hover { box-shadow: 0 0 10px rgba(255, 245, 105, 0.6); }
+
+.priest { border-color: rgba(255, 255, 255, 0.6); }
+.priest:hover { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+
+.shaman { border-color: rgba(0, 112, 222, 0.6); }
+.shaman:hover { box-shadow: 0 0 10px rgba(0, 112, 222, 0.6); }
+
+.mage { border-color: rgba(105, 204, 240, 0.6); }
+.mage:hover { box-shadow: 0 0 10px rgba(105, 204, 240, 0.6); }
+
+.warlock { border-color: rgba(148, 130, 201, 0.6); }
+.warlock:hover { box-shadow: 0 0 10px rgba(148, 130, 201, 0.6); }
+
+.monk { border-color: rgba(0, 255, 150, 0.6); }
+.monk:hover { box-shadow: 0 0 10px rgba(0, 255, 150, 0.6); }
+
+.druid { border-color: rgba(255, 125, 10, 0.6); }
+.druid:hover { box-shadow: 0 0 10px rgba(255, 125, 10, 0.6); }
+
+.demon-hunter { border-color: rgba(163, 48, 201, 0.6); }
+.demon-hunter:hover { box-shadow: 0 0 10px rgba(163, 48, 201, 0.6); }
+
+.death-knight { border-color: rgba(196, 31, 59, 0.6); }
+.death-knight:hover { box-shadow: 0 0 10px rgba(196, 31, 59, 0.6); }
+
+.evoker { border-color: rgba(51, 147, 127, 0.6); }
+.evoker:hover { box-shadow: 0 0 10px rgba(51, 147, 127, 0.6); }

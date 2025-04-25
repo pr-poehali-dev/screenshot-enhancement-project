@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Shield, Swords, Target, Skull, Medical, Flame, Wind, Magic, BookOpen, Leaf, Eye, Snowflake, Dragon } from "lucide-react";
+import { Shield, Swords, Target, Skull, Medical, Flame, Wind, Magic, BookOpen, Leaf, Eye, Zap } from "lucide-react";
 import { 
   Tooltip,
   TooltipContent,
@@ -108,7 +108,7 @@ const wowClasses = [
   {
     id: "evoker",
     name: "Пробудитель",
-    icon: <Dragon className="h-6 w-6" />,
+    icon: <Zap className="h-6 w-6" />,
     description: "Представители драктиров, использующие древние драконьи силы.",
     abilities: ["Огненное дыхание", "Бронзовый полет", "Сущность пробуждения"],
     color: "evoker"

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Shield, Swords, Target, Skull, Medical, Flame, Wind, Magic, BookOpen, Leaf, Eye, Zap } from "lucide-react";
+import { Shield, Swords, Target, Skull, Medical, Flame, Wind, Wand, BookOpen, Leaf, Eye, Zap } from "lucide-react";
 import { 
   Tooltip,
   TooltipContent,
@@ -60,7 +60,7 @@ const wowClasses = [
   {
     id: "mage",
     name: "Маг",
-    icon: <Magic className="h-6 w-6" />,
+    icon: <Wand className="h-6 w-6" />,
     description: "Мудрецы, контролирующие силы огня, льда и тайной магии.",
     abilities: ["Огненный шар", "Превращение", "Чародейский интеллект"],
     color: "mage"
